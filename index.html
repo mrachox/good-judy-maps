@@ -39,6 +39,7 @@
 	</div>
 	<div id="map"></div>
 	<script>
+		// Instantiate MP
 		mapboxgl.accessToken = 'pk.eyJ1IjoiZ29vZGp1ZHl0YXR0b29zdXBwbGllcyIsImEiOiJjbDQ1cnNwenUwMWk5M2NsMjQzejQyNWttIn0.e7TCuXhpwZaSQtyLmr9qZg';
 		const map = new mapboxgl.Map({
 			container: 'map', // container ID
@@ -54,711 +55,703 @@
 
 		// Load custom data to supplement the search results.
 		const customData = {
-		  "features": [
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "softboy.ca",
-		        "ig_url": "https://www.instagram.com/softboy.ca",
-		        "state": "ON",
-		        "Shop": "private?",
-		        "country": "CA",
-		        "title": "Jared Burton",
-		        "type": "Eco-Tattooer",
-		        "website": "softboy.ca",
-		        "description": "eco-tattooer",
-		        "human_name": "Jared Burton",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.3484,
-		          43.66663
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "00a3cc657c3e8cfcd609dd2c8144d4a3"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Victoria",
-		        "ig_name": "sweetiebabyhoneydarling",
-		        "ig_url": "https://www.instagram.com/sweetiebabyhoneydarling",
-		        "state": "BC",
-		        "Shop": "@tattoozoodotnet",
-		        "country": "CA",
-		        "title": "Sohpia",
-		        "type": "Eco-Tattooer",
-		        "website": "tattoozoo.net",
-		        "description": "eco-tattooer",
-		        "human_name": "Sophia",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.36113,
-		          48.42443
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "12322af2283c5bc703baa869c08720a6"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Vancouver",
-		        "ig_name": "tiaberrys",
-		        "ig_url": "https://www.instagram.com/tiaberrys",
-		        "state": "BC",
-		        "Shop": "@lovemoretattoo",
-		        "country": "CA",
-		        "title": "Tia Berrys",
-		        "type": "Eco-Tattooer",
-		        "website": "",
-		        "description": "eco-tattooer",
-		        "human_name": "Tia Berrys",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.10553,
-		          49.283939
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "13459cb914a3f2d49f8fac9a79141f20"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Regina",
-		        "ig_name": "missawright",
-		        "ig_url": "https://www.instagram.com/missawright/",
-		        "state": "SK",
-		        "Shop": "@wrightinkandartwork",
-		        "country": "CA",
-		        "title": "Melissa Wright",
-		        "type": "Eco-Tattooer",
-		        "website": "https://www.mwrightart.ca/",
-		        "description": "eco-tattooer",
-		        "human_name": "Melissa Wright",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -104.618463,
-		          50.500354
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "24f764ae66c05c4fcc26819f90ebf8a0"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Las Vegas",
-		        "ig_name": "rosshenrytattoo",
-		        "ig_url": "https://www.instagram.com/rosshenrytattoo",
-		        "state": "NV",
-		        "Shop": "perennialtattoo",
-		        "country": "USA",
-		        "title": "Ross Henry",
-		        "type": "Eco-Tattooer",
-		        "website": "",
-		        "description": "eco-tattooer",
-		        "human_name": "Ross Henry",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -115.221238,
-		          36.023293
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "2e49c485cc7031536481f981eb1d5b89"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "@annazanete",
-		        "ig_url": "https://www.instagram.com/annazanete",
-		        "state": "ON",
-		        "Shop": "@eden.tattoo.studio",
-		        "country": "CA",
-		        "title": "Anna Zanete",
-		        "type": "Eco-Tattooer",
-		        "website": "annazanete.com",
-		        "description": "eco-tattooer",
-		        "human_name": "Anna Zanete",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.43113,
-		          43.674833
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "34787aa9c483a6f51ab4af3f2aad8670"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Denver",
-		        "ig_name": "ryanetouchedme",
-		        "ig_url": "https://www.instagram.com/ryanetouchedme",
-		        "state": "CO",
-		        "Shop": "thewolfdencustomtattoo",
-		        "country": "USA",
-		        "title": "Ryane Urie",
-		        "type": "Eco-Tattooer",
-		        "website": "https://www.thewolfdentattoo.com/",
-		        "description": "eco-tattooer",
-		        "human_name": "Ryane Urie",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -104.98727,
-		          39.729082
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "4050e5f852fd5822b46b56d03b04c3c4"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "smokingmermaidtattoo",
-		        "ig_url": "https://www.instagram.com/smokingmermaidtattoo",
-		        "state": "ON",
-		        "Shop": "archivetattoo",
-		        "country": "CA",
-		        "title": "Tania Zhang",
-		        "type": "Eco-Tattooer",
-		        "website": "smokingmermaid.bigcartel.com",
-		        "description": "eco-tattooer",
-		        "human_name": "Tania Zhang",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.43298,
-		          43.64991
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "40dfc3ade8eb535c677ac0b578b78dbf"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "New York",
-		        "ig_name": "ohdooly",
-		        "ig_url": "https://www.instagram.com/ohdooly",
-		        "state": "NY",
-		        "Shop": "7seastattoocollective",
-		        "country": "USA",
-		        "title": "Julee Tran",
-		        "type": "Eco-Tattooer",
-		        "website": "https://www.7anchorart.com/",
-		        "description": "eco-tattooer",
-		        "human_name": "Julee Tran",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -78.79547,
-		          42.79852
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "4c34b4d824c3fc7825828b401e2dd2dc"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "1",
-		        "city": "Wyoming",
-		        "ig_name": "workhorseirons",
-		        "ig_url": "https://www.instagram.com/workhorseirons",
-		        "state": "MS",
-		        "Shop": "",
-		        "country": "USA",
-		        "title": "Workhorse Irons",
-		        "type": "Eco-Supplier",
-		        "website": "https://workhorseirons.com/",
-		        "description": "Eco-Supplier",
-		        "human_name": "Workhorse Irons",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -85.674505,
-		          42.890075
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "504c8c595d33dd22bd5f6292c179bd76"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "1",
-		        "city": "Portland",
-		        "ig_name": "coalitiontattoosupply",
-		        "ig_url": "https://www.instagram.com/coalitiontattoosupply",
-		        "state": "OR",
-		        "Shop": "",
-		        "country": "USA",
-		        "title": "Coalition Tattoo Supply",
-		        "type": "Eco-Supplier",
-		        "website": "https://www.coalitiontattoosupply.com/",
-		        "description": "Eco-Supplier",
-		        "human_name": "Coalition Tattoo Supply",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -122.658047,
-		          45.513163
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "505dd65a988af9844adbd92641680c6b"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Victoria",
-		        "ig_name": "@vicleetattoos",
-		        "ig_url": "https://www.instagram.com/vicleetattoos",
-		        "state": "BC",
-		        "Shop": "@tattoozoodotnet",
-		        "country": "CA",
-		        "title": "Vic Lee",
-		        "type": "Eco-Tattooer",
-		        "website": "tattoozoo.net",
-		        "description": "eco-tattooer",
-		        "human_name": "Vic Lee",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.36113,
-		          48.42443
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "53852f5ecf76bd47d54bfa9baa835f88"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Victoria",
-		        "ig_name": "@gerikramertattoos",
-		        "ig_url": "https://www.instagram.com/gerikramertattoos",
-		        "state": "BC",
-		        "Shop": "@tattoozoodotnet",
-		        "country": "CA",
-		        "title": "Geri Kramer",
-		        "type": "Eco-Tattooer",
-		        "website": "tattoozoo.net",
-		        "description": "eco-tattooer",
-		        "human_name": "Geri Kramer",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.36113,
-		          48.42443
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "5c8008edfa7dbaac7b4bf638af3c7e6d"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Thunder Bay",
-		        "ig_name": "rayatwood",
-		        "ig_url": "https://www.instagram.com/rayatwood",
-		        "state": "ON",
-		        "Shop": "atthewelltattoo",
-		        "country": "CA",
-		        "title": "Ray Atwood",
-		        "type": "Eco-Tattooer",
-		        "website": "atthewelltattoo.com",
-		        "description": "eco-tattooer",
-		        "human_name": "Ray Atwood",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -89.21356,
-		          48.44662
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "84aa824d9421a521b28c62c5872a34aa"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "1",
-		        "city": "Des Moines",
-		        "ig_name": "bowerssupply",
-		        "ig_url": "https://www.instagram.com/bowerssupply",
-		        "state": "IA",
-		        "Shop": "",
-		        "country": "USA",
-		        "title": "Bowers Tattoo Supply ",
-		        "type": "Eco-Supplier",
-		        "website": "https://www.bowerstattoosupply.com/",
-		        "description": "Eco-Supplier",
-		        "human_name": "Bowers Tattoo Supply",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -93.66604,
-		          41.61385
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "85db15135465aa6b124e43453584059b"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Victoria",
-		        "ig_name": "guttertattoo",
-		        "ig_url": "https://www.instagram.com/guttertattoo",
-		        "state": "BC",
-		        "Shop": "@tattoozoodotnet",
-		        "country": "CA",
-		        "title": "Emma",
-		        "type": "Eco-Tattooer",
-		        "website": "tattoozoo.net",
-		        "description": "eco-tattooer",
-		        "human_name": "Emma",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.36113,
-		          48.42443
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "9c871847333d210afd6af8474dc28f11"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Quebec City",
-		        "ig_name": "verolagachette",
-		        "ig_url": "https://www.instagram.com/verolagachette",
-		        "state": "QC",
-		        "Shop": "@lunenoirtatouage",
-		        "country": "CA",
-		        "title": "Danielle Veronique",
-		        "type": "Eco-Tattooer",
-		        "website": "verolagachette.com",
-		        "description": "eco-tattooer",
-		        "human_name": "Danielle Veronique",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -71.22534,
-		          46.80841
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "9f8657c716e582316ae110e43e9721f0"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "@humblebeetattoo",
-		        "ig_url": "https://www.instagram.com/humblebeetattoo",
-		        "state": "ON",
-		        "Shop": "@eden.tattoo.studio",
-		        "country": "CA",
-		        "title": "Brittany Randell",
-		        "type": "Eco-Tattooer",
-		        "website": "humblebeetattoo.ca",
-		        "description": "eco-tattooer",
-		        "human_name": "Brittany Randell",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.43113,
-		          43.674833
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "a98c1a781e1004b1ba8a3ef1b817f2bb"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Columbus",
-		        "ig_name": "kaitlynrosetattoo",
-		        "ig_url": "https://www.instagram.com/kaitlynrosetattoo",
-		        "state": "WI",
-		        "Shop": "starkweathertattoo",
-		        "country": "USA",
-		        "title": "Kaitlyn Luther",
-		        "type": "Eco-Tattooer",
-		        "website": "https://www.starkweathertattoo.com/",
-		        "description": "eco-tattooer",
-		        "human_name": "Kaitlyn Luther",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -89.02375,
-		          43.33651
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "b04b59d930c25da5ed7281bb63b7e26a"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "@fantasma.inkk",
-		        "ig_url": "https://www.instagram.com/fantasma.inkk",
-		        "state": "ON",
-		        "Shop": "@eden.tattoo.studio",
-		        "country": "CA",
-		        "title": "Karla DelKid",
-		        "type": "Eco-Tattooer",
-		        "website": "",
-		        "description": "eco-tattooer",
-		        "human_name": "Karla DelKid",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.43113,
-		          43.674833
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "b4c8f8193b7a639ab38463349b78bd4a"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Victoria",
-		        "ig_name": "@charlie.labz",
-		        "ig_url": "https://www.instagram.com/charlie.labz",
-		        "state": "BC",
-		        "Shop": "@tattoozoodotnet",
-		        "country": "CA",
-		        "title": "Charlie Labz",
-		        "type": "Eco-Tattooer",
-		        "website": "tattoozoo.net",
-		        "description": "eco-tattooer",
-		        "human_name": "Charlie Labz",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -123.36113,
-		          48.42443
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "be19538dfd27baff8f85264284c31263"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Bangor ",
-		        "ig_name": "haleyengstrom",
-		        "ig_url": "https://www.instagram.com/haleyengstrom",
-		        "state": "ME",
-		        "Shop": "timberhearthtattoo",
-		        "country": "USA",
-		        "title": "Haley Engstrom",
-		        "type": "Eco-Tattooer",
-		        "website": "https://timberhearthprovisions.co/",
-		        "description": "eco-tattooer",
-		        "human_name": "Haley Engstrom",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -68.77162,
-		          44.80046
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "c3587ad8d6183d1dcd63289f25a5dc3e"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Toronto",
-		        "ig_name": "@lee_dangelo",
-		        "ig_url": "https://www.instagram.com/lee_dangelo",
-		        "state": "ON",
-		        "Shop": "private",
-		        "country": "CA",
-		        "title": "Lee D'Angelo",
-		        "type": "Eco-Tattooer",
-		        "website": "leedangelo.com",
-		        "description": "eco-tattooer",
-		        "human_name": "Lee D'Angelo",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.4261,
-		          43.64707
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "d9e02958851dec510a2c4aff7ba5bd47"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Buffalo",
-		        "ig_name": "omeninkceo",
-		        "ig_url": "https://www.instagram.com/omeninkceo",
-		        "state": "NY",
-		        "Shop": "shopomentattoo",
-		        "country": "USA",
-		        "title": "Cody Stephan",
-		        "type": "Eco-Tattooer",
-		        "website": "https://omen-ink.myspreadshop.com/",
-		        "description": "eco-tattooer",
-		        "human_name": "Cody Stephan",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -78.80223,
-		          42.97971
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "df06a300dc30e2ec68131a9e27a20af0"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "2",
-		        "city": "Las Vegas",
-		        "ig_name": "lealigot",
-		        "ig_url": "https://www.instagram.com/lealigot/?hl=en",
-		        "state": "NV",
-		        "Shop": "pusssykattattooparlor",
-		        "country": "USA",
-		        "title": "Lea Ligot",
-		        "type": "Eco-Tattooer",
-		        "website": "https://lealigottattoos.com/",
-		        "description": "eco-tattooer",
-		        "human_name": "Lea Ligot",
-		        "slogan": ""
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -115.13691,
-		          36.0992
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "e704c651920b2ab23a3e695ec9157c18"
-		    },
-		    {
-		      "type": "Feature",
-		      "properties": {
-		        "tier": "1",
-		        "city": "Toronto",
-		        "ig_name": "goodjudy.ca",
-		        "ig_url": "https://www.instagram.com/goodjudy.ca",
-		        "state": "ON",
-		        "Shop": "",
-		        "country": "CA",
-		        "title": "Good Judy",
-		        "type": "Eco-Supplier",
-		        "website": "https://goodjudy.ca/",
-		        "description": "Eco-Supplier",
-		        "human_name": "Good Judy",
-		        "slogan": "Welcome to Eco Tattooing"
-		      },
-		      "geometry": {
-		        "coordinates": [
-		          -79.4443,
-		          43.65433
-		        ],
-		        "type": "Point"
-		      },
-		      "id": "ef778da8f3ba3dd22145f852de5fde8a"
-		    }
-		  ],
-		  "type": "FeatureCollection"
+			"features": [{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "softboy.ca",
+						"ig_url": "https://www.instagram.com/softboy.ca",
+						"state": "ON",
+						"Shop": "private?",
+						"country": "CA",
+						"title": "Jared Burton",
+						"type": "Eco-Tattooer",
+						"website": "softboy.ca",
+						"description": "eco-tattooer",
+						"human_name": "Jared Burton",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.3484,
+							43.66663
+						],
+						"type": "Point"
+					},
+					"id": "00a3cc657c3e8cfcd609dd2c8144d4a3"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Victoria",
+						"ig_name": "sweetiebabyhoneydarling",
+						"ig_url": "https://www.instagram.com/sweetiebabyhoneydarling",
+						"state": "BC",
+						"Shop": "@tattoozoodotnet",
+						"country": "CA",
+						"title": "Sohpia",
+						"type": "Eco-Tattooer",
+						"website": "tattoozoo.net",
+						"description": "eco-tattooer",
+						"human_name": "Sophia",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.361206,
+							48.424407
+						],
+						"type": "Point"
+					},
+					"id": "12322af2283c5bc703baa869c08720a6"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Vancouver",
+						"ig_name": "tiaberrys",
+						"ig_url": "https://www.instagram.com/tiaberrys",
+						"state": "BC",
+						"Shop": "@lovemoretattoo",
+						"country": "CA",
+						"title": "Tia Berrys",
+						"type": "Eco-Tattooer",
+						"website": "",
+						"description": "eco-tattooer",
+						"human_name": "Tia Berrys",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.10553,
+							49.283939
+						],
+						"type": "Point"
+					},
+					"id": "13459cb914a3f2d49f8fac9a79141f20"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Regina",
+						"ig_name": "missawright",
+						"ig_url": "https://www.instagram.com/missawright/",
+						"state": "SK",
+						"Shop": "@wrightinkandartwork",
+						"country": "CA",
+						"title": "Melissa Wright",
+						"type": "Eco-Tattooer",
+						"website": "https://www.mwrightart.ca/",
+						"description": "eco-tattooer",
+						"human_name": "Melissa Wright",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-104.618463,
+							50.500354
+						],
+						"type": "Point"
+					},
+					"id": "24f764ae66c05c4fcc26819f90ebf8a0"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Las Vegas",
+						"ig_name": "rosshenrytattoo",
+						"ig_url": "https://www.instagram.com/rosshenrytattoo",
+						"state": "NV",
+						"Shop": "perennialtattoo",
+						"country": "USA",
+						"title": "Ross Henry",
+						"type": "Eco-Tattooer",
+						"website": "",
+						"description": "eco-tattooer",
+						"human_name": "Ross Henry",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-115.221238,
+							36.023293
+						],
+						"type": "Point"
+					},
+					"id": "2e49c485cc7031536481f981eb1d5b89"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "annazanete",
+						"ig_url": "https://www.instagram.com/annazanete",
+						"state": "ON",
+						"Shop": "@eden.tattoo.studio",
+						"country": "CA",
+						"title": "Anna Zanete",
+						"type": "Eco-Tattooer",
+						"website": "annazanete.com",
+						"description": "eco-tattooer",
+						"human_name": "Anna Zanete",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.431152,
+							43.674863
+						],
+						"type": "Point"
+					},
+					"id": "34787aa9c483a6f51ab4af3f2aad8670"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Denver",
+						"ig_name": "ryanetouchedme",
+						"ig_url": "https://www.instagram.com/ryanetouchedme",
+						"state": "CO",
+						"Shop": "thewolfdencustomtattoo",
+						"country": "USA",
+						"title": "Ryane Urie",
+						"type": "Eco-Tattooer",
+						"website": "https://www.thewolfdentattoo.com/",
+						"description": "eco-tattooer",
+						"human_name": "Ryane Urie",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-104.98727,
+							39.729082
+						],
+						"type": "Point"
+					},
+					"id": "4050e5f852fd5822b46b56d03b04c3c4"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "smokingmermaidtattoo",
+						"ig_url": "https://www.instagram.com/smokingmermaidtattoo",
+						"state": "ON",
+						"Shop": "archivetattoo",
+						"country": "CA",
+						"title": "Tania Zhang",
+						"type": "Eco-Tattooer",
+						"website": "smokingmermaid.bigcartel.com",
+						"description": "eco-tattooer",
+						"human_name": "Tania Zhang",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.43298,
+							43.64991
+						],
+						"type": "Point"
+					},
+					"id": "40dfc3ade8eb535c677ac0b578b78dbf"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "New York",
+						"ig_name": "ohdooly",
+						"ig_url": "https://www.instagram.com/ohdooly",
+						"state": "NY",
+						"Shop": "7seastattoocollective",
+						"country": "USA",
+						"title": "Julee Tran",
+						"type": "Eco-Tattooer",
+						"website": "https://www.7anchorart.com/",
+						"description": "eco-tattooer",
+						"human_name": "Julee Tran",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-78.79547,
+							42.79852
+						],
+						"type": "Point"
+					},
+					"id": "4c34b4d824c3fc7825828b401e2dd2dc"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "1",
+						"city": "Wyoming",
+						"ig_name": "workhorseirons",
+						"ig_url": "https://www.instagram.com/workhorseirons",
+						"state": "MS",
+						"Shop": "",
+						"country": "USA",
+						"title": "Workhorse Irons",
+						"type": "Eco-Supplier",
+						"website": "https://workhorseirons.com/",
+						"description": "Eco-Supplier",
+						"human_name": "Workhorse Irons",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-85.674505,
+							42.890075
+						],
+						"type": "Point"
+					},
+					"id": "504c8c595d33dd22bd5f6292c179bd76"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "1",
+						"city": "Portland",
+						"ig_name": "coalitiontattoosupply",
+						"ig_url": "https://www.instagram.com/coalitiontattoosupply",
+						"state": "OR",
+						"Shop": "",
+						"country": "USA",
+						"title": "Coalition Tattoo Supply",
+						"type": "Eco-Supplier",
+						"website": "https://www.coalitiontattoosupply.com/",
+						"description": "Eco-Supplier",
+						"human_name": "Coalition Tattoo Supply",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-122.658047,
+							45.513163
+						],
+						"type": "Point"
+					},
+					"id": "505dd65a988af9844adbd92641680c6b"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Victoria",
+						"ig_name": "vicleetattoos",
+						"ig_url": "https://www.instagram.com/vicleetattoos",
+						"state": "BC",
+						"Shop": "@tattoozoodotnet",
+						"country": "CA",
+						"title": "Vic Lee",
+						"type": "Eco-Tattooer",
+						"website": "tattoozoo.net",
+						"description": "eco-tattooer",
+						"human_name": "Vic Lee",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.361092,
+							48.424327
+						],
+						"type": "Point"
+					},
+					"id": "53852f5ecf76bd47d54bfa9baa835f88"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Victoria",
+						"ig_name": "gerikramertattoos",
+						"ig_url": "https://www.instagram.com/gerikramertattoos",
+						"state": "BC",
+						"Shop": "@tattoozoodotnet",
+						"country": "CA",
+						"title": "Geri Kramer",
+						"type": "Eco-Tattooer",
+						"website": "tattoozoo.net",
+						"description": "eco-tattooer",
+						"human_name": "Geri Kramer",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.36122,
+							48.424316
+						],
+						"type": "Point"
+					},
+					"id": "5c8008edfa7dbaac7b4bf638af3c7e6d"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Thunder Bay",
+						"ig_name": "rayatwood",
+						"ig_url": "https://www.instagram.com/rayatwood",
+						"state": "ON",
+						"Shop": "atthewelltattoo",
+						"country": "CA",
+						"title": "Ray Atwood",
+						"type": "Eco-Tattooer",
+						"website": "atthewelltattoo.com",
+						"description": "eco-tattooer",
+						"human_name": "Ray Atwood",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-89.21356,
+							48.44662
+						],
+						"type": "Point"
+					},
+					"id": "84aa824d9421a521b28c62c5872a34aa"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "1",
+						"city": "Des Moines",
+						"ig_name": "bowerssupply",
+						"ig_url": "https://www.instagram.com/bowerssupply",
+						"state": "IA",
+						"Shop": "",
+						"country": "USA",
+						"title": "Bowers Tattoo Supply ",
+						"type": "Eco-Supplier",
+						"website": "https://www.bowerstattoosupply.com/",
+						"description": "Eco-Supplier",
+						"human_name": "Bowers Tattoo Supply",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-93.66604,
+							41.61385
+						],
+						"type": "Point"
+					},
+					"id": "85db15135465aa6b124e43453584059b"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Victoria",
+						"ig_name": "guttertattoo",
+						"ig_url": "https://www.instagram.com/guttertattoo",
+						"state": "BC",
+						"Shop": "@tattoozoodotnet",
+						"country": "CA",
+						"title": "Emma",
+						"type": "Eco-Tattooer",
+						"website": "tattoozoo.net",
+						"description": "eco-tattooer",
+						"human_name": "Emma",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.36113,
+							48.42443
+						],
+						"type": "Point"
+					},
+					"id": "9c871847333d210afd6af8474dc28f11"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Quebec City",
+						"ig_name": "verolagachette",
+						"ig_url": "https://www.instagram.com/verolagachette",
+						"state": "QC",
+						"Shop": "@lunenoirtatouage",
+						"country": "CA",
+						"title": "Danielle Veronique",
+						"type": "Eco-Tattooer",
+						"website": "verolagachette.com",
+						"description": "eco-tattooer",
+						"human_name": "Danielle Veronique",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-71.22534,
+							46.80841
+						],
+						"type": "Point"
+					},
+					"id": "9f8657c716e582316ae110e43e9721f0"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "humblebeetattoo",
+						"ig_url": "https://www.instagram.com/humblebeetattoo",
+						"state": "ON",
+						"Shop": "@eden.tattoo.studio",
+						"country": "CA",
+						"title": "Brittany Randell",
+						"type": "Eco-Tattooer",
+						"website": "humblebeetattoo.ca",
+						"description": "eco-tattooer",
+						"human_name": "Brittany Randell",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.431087,
+							43.674803
+						],
+						"type": "Point"
+					},
+					"id": "a98c1a781e1004b1ba8a3ef1b817f2bb"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Columbus",
+						"ig_name": "kaitlynrosetattoo",
+						"ig_url": "https://www.instagram.com/kaitlynrosetattoo",
+						"state": "WI",
+						"Shop": "starkweathertattoo",
+						"country": "USA",
+						"title": "Kaitlyn Luther",
+						"type": "Eco-Tattooer",
+						"website": "https://www.starkweathertattoo.com/",
+						"description": "eco-tattooer",
+						"human_name": "Kaitlyn Luther",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-89.02375,
+							43.33651
+						],
+						"type": "Point"
+					},
+					"id": "b04b59d930c25da5ed7281bb63b7e26a"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "fantasma.inkk",
+						"ig_url": "https://www.instagram.com/fantasma.inkk",
+						"state": "ON",
+						"Shop": "@eden.tattoo.studio",
+						"country": "CA",
+						"title": "Karla DelKid",
+						"type": "Eco-Tattooer",
+						"website": "",
+						"description": "eco-tattooer",
+						"human_name": "Karla DelKid",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.431192,
+							43.674797
+						],
+						"type": "Point"
+					},
+					"id": "b4c8f8193b7a639ab38463349b78bd4a"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Victoria",
+						"ig_name": "charlie.labz",
+						"ig_url": "https://www.instagram.com/charlie.labz",
+						"state": "BC",
+						"Shop": "@tattoozoodotnet",
+						"country": "CA",
+						"title": "Charlie Labz",
+						"type": "Eco-Tattooer",
+						"website": "tattoozoo.net",
+						"description": "eco-tattooer",
+						"human_name": "Charlie Labz",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-123.361005,
+							48.424384
+						],
+						"type": "Point"
+					},
+					"id": "be19538dfd27baff8f85264284c31263"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Bangor ",
+						"ig_name": "haleyengstrom",
+						"ig_url": "https://www.instagram.com/haleyengstrom",
+						"state": "ME",
+						"Shop": "timberhearthtattoo",
+						"country": "USA",
+						"title": "Haley Engstrom",
+						"type": "Eco-Tattooer",
+						"website": "https://timberhearthprovisions.co/",
+						"description": "eco-tattooer",
+						"human_name": "Haley Engstrom",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-68.77162,
+							44.80046
+						],
+						"type": "Point"
+					},
+					"id": "c3587ad8d6183d1dcd63289f25a5dc3e"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Toronto",
+						"ig_name": "lee_dangelo",
+						"ig_url": "https://www.instagram.com/lee_dangelo",
+						"state": "ON",
+						"Shop": "private",
+						"country": "CA",
+						"title": "Lee D'Angelo",
+						"type": "Eco-Tattooer",
+						"website": "leedangelo.com",
+						"description": "eco-tattooer",
+						"human_name": "Lee D'Angelo",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-79.4261,
+							43.64707
+						],
+						"type": "Point"
+					},
+					"id": "d9e02958851dec510a2c4aff7ba5bd47"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Buffalo",
+						"ig_name": "omeninkceo",
+						"ig_url": "https://www.instagram.com/omeninkceo",
+						"state": "NY",
+						"Shop": "shopomentattoo",
+						"country": "USA",
+						"title": "Cody Stephan",
+						"type": "Eco-Tattooer",
+						"website": "https://omen-ink.myspreadshop.com/",
+						"description": "eco-tattooer",
+						"human_name": "Cody Stephan",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-78.80223,
+							42.97971
+						],
+						"type": "Point"
+					},
+					"id": "df06a300dc30e2ec68131a9e27a20af0"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "2",
+						"city": "Las Vegas",
+						"ig_name": "lealigot",
+						"ig_url": "https://www.instagram.com/lealigot/?hl=en",
+						"state": "NV",
+						"Shop": "pusssykattattooparlor",
+						"country": "USA",
+						"title": "Lea Ligot",
+						"type": "Eco-Tattooer",
+						"website": "https://lealigottattoos.com/",
+						"description": "eco-tattooer",
+						"human_name": "Lea Ligot",
+						"slogan": ""
+					},
+					"geometry": {
+						"coordinates": [
+							-115.13691,
+							36.0992
+						],
+						"type": "Point"
+					},
+					"id": "e704c651920b2ab23a3e695ec9157c18"
+				},
+				{
+					"type": "Feature",
+					"properties": {
+						"tier": "1",
+						"city": "Toronto",
+						"ig_name": "goodjudy.ca",
+						"ig_url": "https://www.instagram.com/goodjudy.ca",
+						"state": "ON",
+						"Shop": "",
+						"country": "CA",
+						"title": "Good Judy",
+						"type": "Eco-Supplier",
+						"website": "https://goodjudy.ca/",
+						"description": "Eco-Supplier",
+						"human_name": "Good Judy",
+						"slogan": "Welcome to Eco Tattooing"
+					},
+					"geometry": {
+						"coordinates": [
+							-79.4443,
+							43.65433
+						],
+						"type": "Point"
+					},
+					"id": "ef778da8f3ba3dd22145f852de5fde8a"
+				}
+			],
+			"type": "FeatureCollection"
 		};
-
-
 
 		function forwardGeocoder(query) {
 			const matchingFeatures = [];
-				for (const feature of customData.features) {
+			for (const feature of customData.features) {
 				// Handle queries with different capitalization
 				// than the source data by calling toLowerCase().
 				if (
-					feature.properties.human_name
-					.toLowerCase()
-					.includes(query.toLowerCase())
-				)
-				{
+					(feature.properties.human_name.toLowerCase().includes(query.toLowerCase())) || (feature.properties.Shop.toLowerCase().includes(query.toLowerCase()))
+				) {
 					// Add a tree emoji as a prefix for custom
-					// data results using carmen geojson format:
-					// https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-						feature['place_name'] = `🌲 ${feature.properties.type} - ${feature.properties.human_name} - ${feature.properties.city} 🌲`;
-						feature['center'] = feature.geometry.coordinates;
-						feature['place_type'] = ['Point'];
-						matchingFeatures.push(feature);
-					}
+					feature['place_name'] = `🌲 ${feature.properties.human_name} - ${feature.properties.type} - ${feature.properties.city} 🌲`;
+					feature['center'] = feature.geometry.coordinates;
+					feature['place_type'] = ['Point'];
+					matchingFeatures.push(feature);
 				}
-				return matchingFeatures;
 			}
+			return matchingFeatures;
+		}
 
 		// Add the control to the map.
 		map.addControl(
@@ -767,14 +760,14 @@
 				localGeocoder: forwardGeocoder,
 				mapboxgl: mapboxgl,
 				placeholder: 'Search for ecotattooers', // Placeholder text for the search bar
-				bbox: [-125.928726,24.779254,-65.459976,59.939880], // Boundary for USA/Canada
+				bbox: [-125.928726, 24.779254, -65.459976, 59.939880], // Boundary for USA/Canada
 			})
 		);
 
 		map.on('click', (event) => {
 			// If the user clicked on one of your markers, get its information.
 			const features = map.queryRenderedFeatures(event.point, {
-				layers: ['good-judy-csv-oct28v2'] // replace with your layer name
+				layers: ['good-judy-csv-nov8-suppliers', 'good-judy-csv-nov8-tattooers'] // replace with your layer name
 			});
 			if (!features.length) {
 				return;
@@ -794,11 +787,10 @@
 					`
 					<h3>${feature.properties.type}</h3>
 					<h2>${feature.properties.human_name}</h2>
-					<p>${feature.properties.city}</p>`
-					+
-					`<h3>`
-					+
-					`<a href=`+ feature.properties.ig_url + `>@${feature.properties.ig_name}</a></h3>`
+					<p>${feature.properties.city}, ${feature.properties.state}</p>` +
+					`<h3>` +
+					`<a target="_blank" href=` + feature.properties.ig_url + `>@${feature.properties.ig_name}</a><br />
+					<a target="_blank" href=` + feature.properties.website + `>Go to website</a></h3>`
 				)
 				.addTo(map);
 		});
