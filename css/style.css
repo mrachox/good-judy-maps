@@ -92,7 +92,7 @@ body {
   top: -2px;
   width: 20px;
   height: 4px;
-  background: black;
+  background: white;
   display: inline-block;
 }
 
@@ -116,10 +116,12 @@ body {
 
 .toggle-button .wolverine .claws:before {
   top: 8px;
+  background: white;
 }
 
 .toggle-button .wolverine .claws:after {
   top: -8px;
+  background: white;
 }
 
 .nav-control {
@@ -178,14 +180,17 @@ body {
 
 /* END For navigation */
 
-/* #header {
-  position: absolute;
-  z-index: 9999;
-} */
+#header {
+  background: black;
+}
 
 #header img {
   max-width: 150px;
   padding: 1em;
+}
+
+#header #Layer_1 {
+  max-width: 500px;
 }
 
 /* Mapbox styles */
@@ -197,6 +202,9 @@ body {
   width: 100%;
 } */
 
+iframe {
+  width: 100%;
+}
 
 #map {
   width: 100vw;
