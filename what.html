@@ -150,60 +150,10 @@
 	</div>
 
 
-	<iframe src=https://docs.google.com/presentation/d/e/2PACX-1vRJh9RBYEN-oc3peMCGBozU26rwAJMxbdOCHEiDgd1iFT9QXiLPXZj4XtfhOed_fA/embed?start=true&loop=false&delayms=3000 frameborder="0" width="1280" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+	<iframe src=https://docs.google.com/presentation/d/e/2PACX-1vRJh9RBYEN-oc3peMCGBozU26rwAJMxbdOCHEiDgd1iFT9QXiLPXZj4XtfhOed_fA/embed?start=true&loop=false&delayms=3000 frameborder="0" width="100%" height="auto" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 
-	<!-- <div id="map"></div>
-	<script>
-		mapboxgl.accessToken = 'pk.eyJ1IjoiZ29vZGp1ZHl0YXR0b29zdXBwbGllcyIsImEiOiJjbDQ1cnNwenUwMWk5M2NsMjQzejQyNWttIn0.e7TCuXhpwZaSQtyLmr9qZg';
-		const map = new mapboxgl.Map({
-			container: 'map', // container ID
-			style: 'mapbox://styles/goodjudytattoosupplies/cl9t0j2jn000v14prtplei1ez', // style URL
-			center: [-100, 45], // starting position [lng, lat]
-			zoom: 4.5, // starting zoom
-			projection: 'globe' // display the map as a 3D globe
-		});
 
-		map.on('style.load', () => {
-			map.setFog({}); // Set the default atmosphere style
-		});
-
-		// Add the control to the map.
-		map.addControl(
-			new MapboxGeocoder({
-				accessToken: mapboxgl.accessToken,
-				mapboxgl: mapboxgl
-			})
-		);
-
-		map.on('click', (event) => {
-			// If the user clicked on one of your markers, get its information.
-			const features = map.queryRenderedFeatures(event.point, {
-				layers: ['good-judy-csv-oct28v2'] // replace with your layer name
-			});
-			if (!features.length) {
-				return;
-			}
-			const feature = features[0];
-
-
-			/*
-		    Create a popup, specify its options
-		    and properties, and add it to the map.
-		  */
-			const popup = new mapboxgl.Popup({
-					offset: [0, -15]
-				})
-				.setLngLat(feature.geometry.coordinates)
-				.setHTML(
-					`<h2>${feature.properties.human_name}</h2>
-					<p>${feature.properties.city}</p>
-					<h3>${feature.properties.type}</h3>
-					<h3>@${feature.properties.ig_name}</h3>`
-				)
-				.addTo(map);
-		});
-	</script> -->
 
 </body>
 

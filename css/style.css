@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background: black;  
 }
 
 /* For navigation */
@@ -204,6 +205,7 @@ body {
 
 iframe {
   width: 100%;
+  height: 40vh;
 }
 
 #map {
@@ -225,3 +227,9 @@ iframe {
 }
 
 /* END Mapbox styles */
+
+@media (min-width:768px) {
+  iframe {
+    height: 100vh;
+  }
+}
