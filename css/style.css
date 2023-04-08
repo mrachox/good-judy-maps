@@ -34,6 +34,7 @@ body {
   .who.body.container h1 img {
     height: 100px;
     margin-bottom: 15px;
+    margin-left: 10px;
   }
 
   .who.body.container .who-img {
@@ -85,27 +86,27 @@ body {
     height: 75vh;
   }
 
-  .stagger-1 {
+  .body.container .stagger-1 {
     margin-left: 1em;
   }
 
-  .stagger-2 {
+  .body.container .stagger-2 {
     margin-left: 2em;
   }
 
-  .stagger-3 {
+  .body.container .stagger-3 {
     margin-left: 3em;
   }
 
-  .stagger-4 {
+  .what.body.container .stagger-4 {
     margin-left: 4em;
   }
 
-  .stagger-5 {
+  .body.container .stagger-5 {
     margin-left: 5em;
   }
 
-  .stagger-6 {
+  .body.container .stagger-6 {
     margin-left: 6em;
   }
 
@@ -113,15 +114,15 @@ body {
     margin-left: 7em;
   }
 
-  .stagger-8 {
+  .body.container .stagger-8 {
     margin-left: 8em;
   }
 
-  .stagger-9 {
+  .body.container .stagger-9 {
     margin-left: 9em;
   }
 
-  .stagger-10 {
+  .what.body.container .stagger-10 {
     margin-left: 10em;
   }
 
@@ -199,6 +200,7 @@ body {
 .how.body img {
   height: 50px;
   margin-bottom: 15px;
+  margin-left: 10px;
 }
 
 .how.body .table-header {
