@@ -27,11 +27,6 @@ body {
     margin-left: 1.5em;
   }
 
-  .how.body.container img {
-    height: 100px;
-    margin-bottom: 15px;
-  }
-
   .how.body.container .table-header {
     margin-left: 1.5em;
   }
@@ -66,6 +61,11 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+
+  .how.body.container img {
+    height: 70px;
+    margin-bottom: 15px;
+  }
 
   .culture.body.container h1 {
     font-size: 8em;
@@ -152,6 +152,11 @@ body {
     left: -520px;
     display: block;
 
+  }
+
+  .how.body.container img {
+    height: 100px;
+    margin-bottom: 15px;
   }
 
 }
