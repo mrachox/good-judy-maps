@@ -10,6 +10,17 @@ body {
 
 /* For pages */
 
+@media screen and (max-height: 500px) {
+  .what.body.container, .how.body.container   {
+    height: 250vh;
+    border: none;
+  }
+
+  .who.body.container, .why.body.container  {
+    border: none;
+  }
+}
+
 @media screen and (min-width: 576px) {
   .body.container {
     border: 2px solid white;
@@ -59,6 +70,11 @@ body {
     margin-left: .5em;
   }
 
+  .culture.body.container img {
+    width: 100%;
+    max-height: initial;
+}
+
 }
 
 @media screen and (min-width: 768px) {
@@ -84,6 +100,7 @@ body {
   /* WHAT */
   .what.body.container {
     height: 75vh;
+    background-size: 70%;
   }
 
   .body.container .stagger-1 {
@@ -176,9 +193,9 @@ body {
 /* WHAT */
 
 .what.body {
-  height: 100vh;
+  height: 140vh;
   background-image: url(/img/what-bg.png);
-  background-size: 70%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: bottom left;
 }
@@ -255,8 +272,8 @@ body {
 }
 
 .culture.body img {
-  width: auto;
-  max-height: 500px;
+  width: 100%;
+  max-height: initial;
 }
 
 .culture.body h1 {
