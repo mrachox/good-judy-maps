@@ -394,6 +394,7 @@ body li {
   padding: 0px 0px;
   cursor: pointer;
   -webkit-user-select: none;
+  user-select: none;
   opacity: 0.97;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -436,6 +437,7 @@ body li {
   transform-origin: 50% 50%;
   -webkit-transition: all 0.1s 0.2s, -webkit-transform 0.2s ease;
   -webkit-transition-delay: ease, 0s;
+  transition-delay: ease, 0s;
   -moz-transition: all 0.1s 0.2s ease, -moz-transform 0.2s ease;
   -o-transition: all 0.1s 0.2s ease, -o-transform 0.2s ease;
   transition: all 0.1s 0.2s ease, transform 0.2s ease;
@@ -476,6 +478,7 @@ body li {
 .nav-control:checked~.toggle-button .wolverine .claws {
   -webkit-transition: all 0.1s 0s;
   -webkit-transition-delay: ease;
+  transition-delay: ease, 0s;
   -moz-transition: all 0.1s 0s ease;
   -o-transition: all 0.1s 0s ease;
   transition: all 0.1s 0s ease;
@@ -488,6 +491,7 @@ body li {
   background: white;
   -webkit-transition: all 0.1s ease, -webkit-transform 0.1s 0.2s;
   -webkit-transition-delay: 0s, ease;
+  transition-delay: ease, 0s;
   -moz-transition: all 0.1s ease, -moz-transform 0.1s 0.2s ease;
   -o-transition: all 0.1s ease, -o-transform 0.1s 0.2s ease;
   transition: all 0.1s ease, transform 0.1s 0.2s ease;
@@ -547,10 +551,6 @@ iframe {
 
 #map .mapboxgl-popup-content p {
   margin-top: 0;
-}
-
-#map .mapboxgl-popup-tip {
-  /* border-left-color: #D9FFD6; */
 }
 
 /* END Mapbox styles */
